@@ -3,9 +3,7 @@ import Canvas from "./Canvas";
 import data from "./data";
 import LocomotiveScroll from "locomotive-scroll";
 import { useEffect, useState, useRef } from "react";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Circ, Expo } from "gsap/all";
 
 function App() {
   const [showCanvas, setShowCanvas] = useState(false);
@@ -13,7 +11,8 @@ function App() {
   const growingSpan = useRef(null);
 
   useEffect(() => {
-    const locomotiveScroll = new LocomotiveScroll();
+    const scroll = new LocomotiveScroll();
+    return () => scroll.destroy();
   }, []);
 
   useEffect(() => {
@@ -71,7 +70,9 @@ function App() {
       ></span>
       <div className="w-full relative min-h-screen font-['Helvetica_Now_Display']">
         {showCanvas &&
-          data[0].map((canvasdets, index) => <Canvas details={canvasdets} />)}
+          data[0].map((canvasdets, index) => (
+            <Canvas key={index} details={canvasdets} />
+          ))}
         <div className="w-full relative z-[1] h-screen  ">
           <nav className="w-full p-8 flex justify-between z-50 border-b border-white/10 ">
             <div className="brand text-2xl font-md">Thirtysixstudio</div>
@@ -118,7 +119,9 @@ function App() {
       </div>
       <div className="w-full relative h-screen  mt-32 px-10">
         {showCanvas &&
-          data[1].map((canvasdets, index) => <Canvas details={canvasdets} />)}
+          data[1].map((canvasdets, index) => (
+            <Canvas key={index} details={canvasdets} />
+          ))}
         <h1 className="text-8xl tracking-tighter">about the brand</h1>
         <p className="text-4xl leading-[1.8] w-[80%] mt-10 font-light">
           we are a team of designers, developers, and strategists who are

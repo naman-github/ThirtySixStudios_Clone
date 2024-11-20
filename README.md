@@ -1,5 +1,9 @@
 # ThirtySix Studio - Agency Portfolio
 
+## Deployment
+
+The application is deployed on Netlify. You can check - https://deft-sherbet-c1f857.netlify.app/
+
 ![ThirtySix Studio Banner](./36.png)
 
 Welcome to **ThirtySix Studio**, a modern, minimalistic agency portfolio built with **React**, **Tailwind CSS**, and **GSAP** animations. This project is designed to showcase a sleek, responsive design with interactive animations, suitable for agencies and freelancers looking for a visually engaging portfolio website.
@@ -51,7 +55,3 @@ Ensure you have **Node.js** and **npm** installed.
    npm install
    npm run dev
    server starts on localhost:5173
-
-## Deployment
-
-The application is deployed on Netlify. You can check - https://deft-sherbet-c1f857.netlify.app/

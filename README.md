@@ -51,3 +51,7 @@ Ensure you have **Node.js** and **npm** installed.
    npm install
    npm run dev
    server starts on localhost:5173
+
+## Deployment
+
+The application is deployed on Netlify. You can check - https://deft-sherbet-c1f857.netlify.app/

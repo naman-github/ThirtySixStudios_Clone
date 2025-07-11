@@ -36,10 +36,11 @@ function Canvas({ details }) {
     img.onload = () => {
       canvas.width = canvas.offsetWidth * scale;
       canvas.height = canvas.offsetHeight * scale;
-      canvas.style.width = canvas.offsetWidth + "px";
-      canvas.style.height = canvas.offsetHeight + "px";
+      canvas.style.width = `${canvas.offsetWidth}px`;
+      canvas.style.height = `${canvas.offsetHeight}px`;
 
-      ctx.scale(scale, scale);
+      ctx.setTransform(scale, 0, 0, scale, 0, 0);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(img, 0, 0, canvas.offsetWidth, canvas.offsetHeight);
     };
   }, [index]);
